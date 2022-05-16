@@ -1,20 +1,20 @@
 #if !defined(VECTORS)
 #define VECTORS
 
-#define INITIAL_SIZE 10
+#define INITIAL_SIZE 5
 
-struct ivector
+typedef struct Vector
 {
-	int *vec;
-	int len;
-	int cursor;
-	int __size; // total size of vector
-};
+	int *array;
+	size_t len;
+	size_t cursor;
+	size_t __size; // total size of vector
+} Vector;
 
-struct ivector *new_ivector(void);
+Vector vecCreate(void);
 
-void push(struct ivector * ivec, int value);
+void vecPush(Vector *vec, int value);
 
-void print_ivector(struct ivector *ivec);
+void vecPrint(Vector *vec);
 
 #endif // VECTORS

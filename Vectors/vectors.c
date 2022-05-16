@@ -3,29 +3,29 @@
 
 #include "./vectors.h"
 
-struct ivector *new_ivector() {
-	int * vec = malloc(sizeof(int) * INITIAL_SIZE);
-	struct ivector * ivec = malloc(sizeof(struct ivector));
-
-	ivec->vec = vec;
-	ivec->len = 0;
-	ivec->cursor = 0;
-	ivec->__size = INITIAL_SIZE;
-
-	return ivec;
+Vector vecCreate(void) {
+	Vector vec = {
+		.array = malloc(sizeof(int) * INITIAL_SIZE),
+		.cursor = 0,
+		.len = 0,
+		.__size = INITIAL_SIZE
+	};
+	return vec;
 }
 
-void push(struct ivector * ivec, int value) {
-	//TODO
-	ivec->vec[ivec->cursor++] = value;
-	ivec->len++;
-}
-
-void print_ivector(struct ivector *ivec) {
-	//TODO
-	printf("Ivector( ");
-	for (size_t i = 0; i < ivec->len; i++) {
-		printf("%d - ", ivec->vec[i]);
+void vecPush(Vector* vec, int value) {
+	if (vec->cursor == vec->__size) {
+		vec->__size *= 2;
+		vec->array = realloc(vec->array, vec->__size*sizeof(int));
 	}
-	printf(")\n");
+	vec->array[vec->cursor++] = value;
+	vec->len++;
+}
+
+void vecPrint(Vector *vec) {
+	printf("\033[31m[\033[m ");
+	for (size_t i = 0; i < vec->len; i++) {
+		printf("%d\033[31m,\033[m ", vec->array[i]);
+	}
+	printf("\033[31m]\033[m\n");
 }

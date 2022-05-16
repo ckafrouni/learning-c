@@ -5,25 +5,25 @@
 
 
 int main(void) {
-	struct ivector * ivec = new_ivector();
+	Vector vec = vecCreate();
 
-	push(ivec, 3);
-	push(ivec, 5);
-	push(ivec, 10);
-	push(ivec, 3);
-	push(ivec, 5);
-	push(ivec, 10);
-	push(ivec, 3);
-	push(ivec, 5);
-	push(ivec, 10);
-	push(ivec, 3);
-	push(ivec, 5);
-	push(ivec, 10);
-	push(ivec, 10);
-	push(ivec, 10);
-	push(ivec, 10);
+	vecPush(&vec, 3);
+	vecPush(&vec, 5);
+	vecPush(&vec, 10);
+	vecPush(&vec, 3);
+	vecPush(&vec, 5);
+	vecPush(&vec, 10);
+	vecPush(&vec, 3);
+	vecPush(&vec, 5);
+	vecPush(&vec, 10);
+	vecPush(&vec, 3);
+	vecPush(&vec, 5);
+	vecPush(&vec, 10);
+	vecPush(&vec, 10);
+	vecPush(&vec, 10);
+	vecPush(&vec, 10);
 
-	print_ivector(ivec);
+	vecPrint(&vec);
 	
 	return 0;
 }
