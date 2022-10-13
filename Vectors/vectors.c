@@ -29,3 +29,8 @@ void vecPrint(Vector *vec) {
 	}
 	printf("\033[31m]\033[m\n");
 }
+
+char *vecStr(Vector *vec) {
+	char *buffer;
+	
+}

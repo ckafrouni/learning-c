@@ -3,7 +3,7 @@
 
 #define INITIAL_SIZE 5
 
-typedef struct Vector
+typedef struct
 {
 	int *array;
 	size_t len;

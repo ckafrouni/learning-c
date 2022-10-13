@@ -3,21 +3,37 @@
 
 #include <stdbool.h>
 
-typedef struct node nodeT;
-struct node
+// typedef struct node nodeT;
+// struct node
+// {
+// 	int value;
+// 	nodeT *next;
+// 	nodeT *prev;
+// };
+
+typedef struct
 {
 	int value;
 	nodeT *next;
 	nodeT *prev;
-};
+} nodeT;
 
-typedef struct linkedlist linkedlistT;
-struct linkedlist
+typedef struct
 {
+	size_t size;
 	nodeT *head;
-	nodeT *tail;
-	int size;
-};
+	nodeT *tail
+} linkedlistT;
+
+
+
+// typedef struct linkedlist linkedlistT;
+// struct linkedlist
+// {
+// 	nodeT *head;
+// 	nodeT *tail;
+// 	int size;
+// };
 
 nodeT *new_node(int value, nodeT *prev, nodeT *next);
 
